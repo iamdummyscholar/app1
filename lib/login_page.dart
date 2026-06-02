@@ -1,45 +1,48 @@
+import 'package:app1/signup_page.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
 
-class _LoginPageState extends State<LoginPage> {
-  String userInput = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 166, 193, 252),
-      appBar: AppBar(title: const Text('Login Page'), centerTitle: true),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      appBar: AppBar(
+        title: const Text('Login Page'), 
+        centerTitle: true),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.network(
-              'https://cdn-icons-png.flaticon.com/512/747/747376.png',
+              'https://cdn-icons-png.flaticon.com/128/1077/1077012.png',
               height: 100,
               width: 100,
             ),
-            Text('Welcome to Login Page'),
             SizedBox(height: 10),
+            Text('Welcome back, please sign in'),
+            SizedBox(height: 10),
+            
             //USERNAME
             TextField(
               decoration: InputDecoration(
-                hintText: "Enter Username or Email",
-                labelText: "Username/ Email",
+                hintText: "Enter Username",
+                labelText: "Username",
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
                 prefixIcon: Icon(Icons.person),
               ),
             ),
-            SizedBox(height: 10), // Add some spacing between the fields
+            SizedBox(height: 10), 
+
             //PASSWORD
             TextField(
+              obscureText: true,
               decoration: InputDecoration(
                 hintText: "Enter your Password",
                 labelText: "Password",
@@ -49,29 +52,50 @@ class _LoginPageState extends State<LoginPage> {
                 prefixIcon: Icon(Icons.lock),
               ),
             ),
-            SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                // Handle login logic here
-              },
+            SizedBox(height: 10), 
+            
+            //code ni sir almar to, try ko lang. 
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 33, 78, 226),
+                ),
+                child: Text(
+                  'Sign In',
+                  style: TextStyle(
+                    fontSize: 18, color: Colors.white),
+                  ),
+                ),
+              ),
+            
 
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(
-                  double.infinity,
-                  50,
-                ), // Make the button full width
-                backgroundColor: Color.fromARGB(
-                  255,
-                  39,
-                  85,
-                  238,
-                ), // Set the background color
+            //code ko to, same as sa code lang ni sir almar VVVV
+
+            // ElevatedButton(
+            //   onPressed: () {},
+            //   style: ElevatedButton.styleFrom(
+            //     minimumSize: Size(double.infinity,50,), 
+            //     backgroundColor: Color.fromARGB(255,39,85,238,), 
+            //   ),
+              // child: Text(
+              //   'Login',
+              //   style: TextStyle(fontSize: 18, color: Colors.white),
+              // ),
+            // ),
+
+            SizedBox(height: 10), 
+            //Register Text Button
+
+            TextButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (_) => Signup()));
+            }, 
+              child: Text('Register',
+              style: TextStyle(color: Colors.blue),
               ),
-              child: Text(
-                'Login',
-                style: TextStyle(fontSize: 18, color: Colors.white),
               ),
-            ),
+ 
           ],
         ),
       ),

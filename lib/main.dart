@@ -2,6 +2,7 @@
 // import 'package:app1/image_screen.dart';
 //import 'package:app1/prelim_page.dart';
 //import 'package:app1/row_column.dart';
+//import 'package:app1/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:app1/login_page.dart';
 
@@ -18,7 +19,7 @@ class MainApp extends StatelessWidget {
       home: LoginPage(),
       theme: ThemeData(
         appBarTheme: AppBarTheme(
-          backgroundColor:Color.fromARGB(255, 39, 85, 238)),
+          backgroundColor:Color.fromARGB(255, 64, 104, 236)),
       ),
     );
   }
