@@ -1,3 +1,4 @@
+import 'package:app1/navbar_page.dart';
 import 'package:app1/signup_page.dart';
 import 'package:flutter/material.dart';
 
@@ -58,7 +59,9 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => NavbarPage()));
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(255, 33, 78, 226),
                 ),
